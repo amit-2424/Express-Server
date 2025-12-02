@@ -1,0 +1,16 @@
+import { Router } from "express";
+import { todoController } from "./todo.controller";
+
+const router = Router();
+
+router.post("/", todoController.createTodo);
+
+router.get("/", todoController.getTodo);
+
+router.get("/:id", todoController.getSingleTodo);
+
+router.put("/:id", todoController.updatedTodo);
+
+router.delete("/:id", todoController.deleteTodo);
+
+export const todoRouter = router;
